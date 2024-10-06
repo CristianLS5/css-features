@@ -3,11 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { LongTextComponent } from '../long-text/long-text.component';
 import { IntroComponent } from '../intro/intro.component';
+import { HorizontalCarouselIndicatorComponent } from '../features/horizontal-carousel-indicator/horizontal-carousel-indicator.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, LongTextComponent, IntroComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    LongTextComponent,
+    IntroComponent,
+    HorizontalCarouselIndicatorComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

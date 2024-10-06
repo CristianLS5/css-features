@@ -1,0 +1,11 @@
+<app-feature-showcase [title]="title" [description]="description" [htmlCode]="htmlCode" [cssCode]="cssCode"
+    [jsCode]="jsCode">
+    <div example class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item" *ngFor="let item of [1, 2, 3, 4, 5]">
+                <h3>Item {{ item }}</h3>
+                <p>This is carousel item {{ item }}</p>
+            </div>
+        </div>
+    </div>
+</app-feature-showcase>

@@ -119,6 +119,7 @@ select {
   padding: 0 2rem;
 }
 
-main {
-  padding-top: 225px;
+main.container {
+  padding-top: 275px; // Adjust this value based on your header height
+  padding-bottom: 2rem;
 }

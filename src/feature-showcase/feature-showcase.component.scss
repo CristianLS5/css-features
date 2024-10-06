@@ -1,43 +1,78 @@
 .feature-showcase {
   margin-bottom: 2rem;
+  max-width: 1080px;
+  width: 100%;
 }
 
 .showcase-container {
   display: flex;
   gap: 2rem;
+  height: 400px; // Set a fixed height for the container
 }
 
 .example,
 .code {
   flex: 1;
+  min-width: 0;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.example {
+  padding: 1rem;
+  overflow-y: auto; // Allow vertical scrolling if content exceeds height
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+}
+
+.code-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .tabs {
   display: flex;
-  margin-bottom: 1rem;
+  background-color: var(--bg-secondary);
+  padding: 0.5rem 1rem 0;
+  border-bottom: 1px solid var(--border-color);
 
   button {
     padding: 0.5rem 1rem;
-    background: var(--bg-secondary);
     border: none;
-    color: var(--text-primary);
+    background-color: transparent;
+    color: var(--text-secondary);
     cursor: pointer;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-right: 0.5rem;
 
     &.active {
-      background: var(--accent-color);
-      color: var(--bg-primary);
+      background-color: var(--bg-primary);
+      color: var(--accent-color);
+    }
+
+    &:hover:not(.active) {
+      background-color: var(--bg-primary);
+      opacity: 0.7;
     }
   }
 }
 
 pre {
-  background: var(--bg-secondary);
+  margin: 0;
   padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
+  overflow-y: auto; // Allow vertical scrolling
+  flex-grow: 1;
+  background-color: var(--bg-secondary);
 }
 
 code {
   font-family: "Courier New", Courier, monospace;
   white-space: pre-wrap;
+  color: var(--text-primary);
 }
