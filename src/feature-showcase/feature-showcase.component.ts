@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,9 +15,30 @@ export class FeatureShowcaseComponent {
   @Input() cssCode: string = '';
   @Input() jsCode: string = '';
 
+  @ViewChild('htmlTab') htmlTab!: ElementRef;
+
+  showingCode: boolean = false;
   activeTab: 'html' | 'css' | 'js' = 'html';
+  focusedTab: 'html' | 'css' | 'js' | null = null;
+
+  toggleView() {
+    this.showingCode = !this.showingCode;
+    if (this.showingCode) {
+      setTimeout(() => {
+        this.htmlTab.nativeElement.focus();
+      });
+    }
+  }
 
   setActiveTab(tab: 'html' | 'css' | 'js') {
     this.activeTab = tab;
+  }
+
+  onTabFocus(tab: 'html' | 'css' | 'js') {
+    this.focusedTab = tab;
+  }
+
+  onTabBlur() {
+    this.focusedTab = null;
   }
 }

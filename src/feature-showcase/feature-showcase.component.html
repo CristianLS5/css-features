@@ -1,16 +1,27 @@
 <div class="feature-showcase">
-    <h2>{{ title }}</h2>
-    <p>{{ description }}</p>
+    <h2 class="title is-4">{{ title }}</h2>
+    <p class="subtitle is-6">{{ description }}</p>
     <div class="showcase-container">
-        <div class="example">
-            <ng-content select="[example]"></ng-content>
+        <div class="toggle-tab" (click)="toggleView()">
+            {{ showingCode ? 'Demo' : 'Code' }}
         </div>
-        <div class="code">
-            <div class="code-content">
+        <div class="content" [ngClass]="{'showing-code': showingCode}">
+            <div class="example">
+                <ng-content select="[example]"></ng-content>
+            </div>
+            <div class="code">
                 <div class="tabs">
-                    <button (click)="setActiveTab('html')" [class.active]="activeTab === 'html'">HTML</button>
-                    <button (click)="setActiveTab('css')" [class.active]="activeTab === 'css'">CSS</button>
-                    <button (click)="setActiveTab('js')" [class.active]="activeTab === 'js'">JS</button>
+                    <ul>
+                        <li #htmlTab [class.is-active]="activeTab === 'html'"
+                            [class.tab-focused]="focusedTab === 'html'" tabindex="0" (click)="setActiveTab('html')"
+                            (focus)="onTabFocus('html')" (blur)="onTabBlur()">HTML</li>
+                        <li [class.is-active]="activeTab === 'css'" [class.tab-focused]="focusedTab === 'css'"
+                            tabindex="0" (click)="setActiveTab('css')" (focus)="onTabFocus('css')" (blur)="onTabBlur()">
+                            CSS</li>
+                        <li [class.is-active]="activeTab === 'js'" [class.tab-focused]="focusedTab === 'js'"
+                            tabindex="0" (click)="setActiveTab('js')" (focus)="onTabFocus('js')" (blur)="onTabBlur()">JS
+                        </li>
+                    </ul>
                 </div>
                 <pre [ngSwitch]="activeTab">
                     <code *ngSwitchCase="'html'">{{ htmlCode }}</code>
