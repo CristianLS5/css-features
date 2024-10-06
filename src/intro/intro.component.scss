@@ -1,0 +1,36 @@
+.intro-container {
+  padding: 2rem;
+  max-width: 1080px; // Updated from 800px
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+
+  &::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+  }
+}
