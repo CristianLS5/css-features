@@ -5,6 +5,7 @@ import { LongTextComponent } from '../long-text/long-text.component';
 import { IntroComponent } from '../intro/intro.component';
 import { HorizontalCarouselIndicatorComponent } from '../features/horizontal-carousel-indicator/horizontal-carousel-indicator.component';
 import { MarkerCarouselComponent } from '../features/marker-carousel/marker-carousel.component';
+import { ImageRevealComponent } from '../features/image-reveal/image-reveal.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { MarkerCarouselComponent } from '../features/marker-carousel/marker-caro
     IntroComponent,
     HorizontalCarouselIndicatorComponent,
     MarkerCarouselComponent,
+    ImageRevealComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
