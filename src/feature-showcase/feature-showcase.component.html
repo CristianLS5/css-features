@@ -1,0 +1,21 @@
+<div class="feature-showcase">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+    <div class="showcase-container">
+        <div class="example">
+            <ng-content select="[example]"></ng-content>
+        </div>
+        <div class="code">
+            <div class="tabs">
+                <button (click)="setActiveTab('html')" [class.active]="activeTab === 'html'">HTML</button>
+                <button (click)="setActiveTab('css')" [class.active]="activeTab === 'css'">CSS</button>
+                <button (click)="setActiveTab('js')" [class.active]="activeTab === 'js'">JS</button>
+            </div>
+            <pre [ngSwitch]="activeTab">
+        <code *ngSwitchCase="'html'">{{ htmlCode }}</code>
+        <code *ngSwitchCase="'css'">{{ cssCode }}</code>
+        <code *ngSwitchCase="'js'">{{ jsCode }}</code>
+      </pre>
+        </div>
+    </div>
+</div>

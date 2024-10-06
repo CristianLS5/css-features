@@ -1,0 +1,43 @@
+.feature-showcase {
+  margin-bottom: 2rem;
+}
+
+.showcase-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.example,
+.code {
+  flex: 1;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 1rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+
+    &.active {
+      background: var(--accent-color);
+      color: var(--bg-primary);
+    }
+  }
+}
+
+pre {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
