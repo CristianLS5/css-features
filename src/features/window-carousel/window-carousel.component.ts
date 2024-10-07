@@ -24,7 +24,7 @@ interface Window {
 export class WindowCarouselComponent implements AfterViewInit, OnDestroy {
   @Input() title: string = 'Window Carousel';
   @Input() description: string =
-    'This demo showcases a parallax effect using GSAP, where images move in response to scrolling.';
+    'This demo showcases a parallax effect using GSAP (GreenSock Animation Platform), where images move in response to horizontal scrolling.';
 
   @ViewChild('carouselContainer') carouselContainer!: ElementRef;
 
