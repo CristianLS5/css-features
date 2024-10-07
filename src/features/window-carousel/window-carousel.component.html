@@ -1,0 +1,29 @@
+<div class="feature-showcase">
+    <h2 class="title is-4">{{ title }}</h2>
+    <p class="subtitle is-6">{{ description }}</p>
+    <div class="showcase-container">
+        <div class="toggle-tab" (click)="toggleView()">
+            {{ showingCode ? 'Demo' : 'Code' }}
+        </div>
+        <div class="content" [ngClass]="{'showing-code': showingCode}">
+            <div class="example">
+                <ul class="slides" #carouselContainer>
+                    <li class="slide" *ngFor="let window of windows; let i = index">
+                        <img [src]="window.src" [alt]="window.alt" draggable="false" />
+                        <a target="_blank" [href]="window.src"><span>IMG </span>{{ i + 1 }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="code" *ngIf="showingCode">
+                <div class="tabs">
+                    <ul>
+                        <li [class.is-active]="activeTab === 'html'" (click)="setActiveTab('html')">HTML</li>
+                        <li [class.is-active]="activeTab === 'css'" (click)="setActiveTab('css')">CSS</li>
+                        <li [class.is-active]="activeTab === 'js'" (click)="setActiveTab('js')">JS</li>
+                    </ul>
+                </div>
+                <pre><code [innerHTML]="activeTab === 'html' ? htmlCode : activeTab === 'css' ? cssCode : jsCode"></code></pre>
+            </div>
+        </div>
+    </div>
+</div>

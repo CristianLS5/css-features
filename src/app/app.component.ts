@@ -7,6 +7,7 @@ import { HorizontalCarouselIndicatorComponent } from '../features/horizontal-car
 import { MarkerCarouselComponent } from '../features/marker-carousel/marker-carousel.component';
 import { ImageRevealComponent } from '../features/image-reveal/image-reveal.component';
 import { CoverFlowComponent } from '../features/cover-flow/cover-flow.component';
+import { WindowCarouselComponent } from '../features/window-carousel/window-carousel.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { CoverFlowComponent } from '../features/cover-flow/cover-flow.component'
     HorizontalCarouselIndicatorComponent,
     MarkerCarouselComponent,
     ImageRevealComponent,
-    CoverFlowComponent
+    CoverFlowComponent,
+    WindowCarouselComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
