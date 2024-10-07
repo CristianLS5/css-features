@@ -1,0 +1,210 @@
+.feature-showcase {
+  margin-bottom: 2rem;
+}
+
+.showcase-container {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.toggle-tab {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.example,
+.code {
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  height: 100%;
+}
+
+.tabs {
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    color: var(--text-primary);
+    border-bottom: 2px solid transparent;
+
+    &.is-active {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+    }
+  }
+}
+
+.code pre {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  display: flex;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  color: var(--text-primary);
+  display: block;
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+.showing-code {
+  .example {
+    display: none;
+  }
+}
+
+// Cover Flow specific styles
+.cards-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards {
+  --cover-size: min(30vw, 200px);
+  --cover-gap: max(10px, 1vw);
+  list-style: none;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  height: calc(100% - 20px); // Adjust for horizontal scrollbar
+  align-items: center;
+  gap: var(--cover-gap);
+  padding-inline: calc(50% - var(--cover-size) / 2);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  max-width: calc(var(--cover-size) * 6);
+
+  // Show horizontal scrollbar
+  &::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+}
+
+.cards li {
+  flex: 0 0 var(--cover-size);
+  aspect-ratio: 1;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  view-timeline-name: --li-in-and-out-of-view;
+  view-timeline-axis: inline;
+  animation: linear adjust-z-index both;
+  animation-timeline: --li-in-and-out-of-view;
+  perspective: 40em;
+}
+
+.cards li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-reflect: below 0.5em
+    linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.25));
+  animation: linear rotate-cover both;
+  animation-timeline: --li-in-and-out-of-view;
+}
+
+@keyframes adjust-z-index {
+  0%,
+  100% {
+    z-index: 1;
+  }
+  50% {
+    z-index: 100;
+  }
+}
+
+@keyframes rotate-cover {
+  0% {
+    transform: translateX(-100%) rotateY(-45deg);
+  }
+  35% {
+    transform: translateX(0) rotateY(-45deg);
+  }
+  50% {
+    transform: rotateY(0deg) translateZ(1em) scale(1.5);
+  }
+  65% {
+    transform: translateX(0) rotateY(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotateY(45deg);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .cards {
+    --cover-size: min(40vw, 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    --cover-size: min(50vw, 120px);
+  }
+}
+
+// Add this for Firefox scrollbar styling
+@supports (scrollbar-color: auto) {
+  .cards {
+    scrollbar-color: var(--accent-color) var(--bg-secondary);
+    scrollbar-width: thin;
+  }
+}
