@@ -85,9 +85,7 @@
     position: fixed;
     left: 0;
     right: 0;
-  }
-  header + * {
-    margin-top: 190px;
+    top: 0; // Add this to ensure the header is at the top
   }
 }
 
@@ -101,6 +99,10 @@
 header {
   background: var(--bg-secondary);
   z-index: 1000;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0; // Add this to ensure the header is at the top
 }
 
 .limited {

@@ -1,0 +1,16 @@
+<app-feature-showcase [title]="title" [description]="description" [htmlCode]="htmlCode" [cssCode]="cssCode"
+    [jsCode]="jsCode">
+    <div example>
+        <div data-component="carousel">
+            <ul #entriesContainer class="entries" tabindex="0">
+                <li *ngFor="let image of images; let i = index">
+                    <img [src]="image.src" [alt]="image.alt" draggable="false">
+                </li>
+            </ul>
+            <div class="markers">
+                <a *ngFor="let image of images; let i = index" href="#" (click)="scrollToImage($event, i)"
+                    [style.--i]="i + 1" #marker></a>
+            </div>
+        </div>
+    </div>
+</app-feature-showcase>

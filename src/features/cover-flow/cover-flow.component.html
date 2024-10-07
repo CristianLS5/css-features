@@ -1,0 +1,35 @@
+<div class="feature-showcase">
+    <h2 class="title is-4">{{ title }}</h2>
+    <p class="subtitle is-6">{{ description }}</p>
+    <div class="showcase-container">
+        <div class="toggle-tab" (click)="toggleView()">
+            {{ showingCode ? 'Demo' : 'Code' }}
+        </div>
+        <div class="content" [ngClass]="{'showing-code': showingCode}">
+            <div class="example">
+                <div class="cards-container">
+                    <ul class="cards">
+                        <li *ngFor="let album of albums">
+                            <img [src]="album.src" width="600" height="600" [alt]="album.alt" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="code">
+                <div class="tabs">
+                    <ul>
+                        <li [class.is-active]="activeTab === 'html'" tabindex="0" (click)="setActiveTab('html')">HTML
+                        </li>
+                        <li [class.is-active]="activeTab === 'css'" tabindex="0" (click)="setActiveTab('css')">CSS</li>
+                        <li [class.is-active]="activeTab === 'js'" tabindex="0" (click)="setActiveTab('js')">JS</li>
+                    </ul>
+                </div>
+                <pre [ngSwitch]="activeTab">
+          <code *ngSwitchCase="'html'">{{ htmlCode }}</code>
+          <code *ngSwitchCase="'css'">{{ cssCode }}</code>
+          <code *ngSwitchCase="'js'">{{ jsCode }}</code>
+        </pre>
+            </div>
+        </div>
+    </div>
+</div>

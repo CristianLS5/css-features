@@ -1,0 +1,99 @@
+.feature-showcase {
+  margin-bottom: 2rem;
+}
+
+.showcase-container {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.toggle-tab {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.example,
+.code {
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  height: 100%;
+}
+
+.tabs {
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    color: var(--text-primary);
+    border-bottom: 2px solid transparent;
+
+    &.is-active {
+      color: var(--accent-color);
+    }
+
+    &.tab-focused {
+      color: var(--accent-color);
+      outline: none;
+      border-bottom: 2px solid var(--accent-color);
+    }
+  }
+}
+
+.code pre {
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  height: calc(100% - 40px); // Adjust based on your tab height
+  display: flex; // Add this
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  color: var(--text-primary);
+  display: block;
+  padding: 1rem;
+  margin: 0;
+  width: 100%; // Add this
+}
+
+.showing-code {
+  .example {
+    display: none;
+  }
+}

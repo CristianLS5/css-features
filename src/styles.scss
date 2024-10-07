@@ -18,7 +18,7 @@
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -109,4 +109,17 @@ select {
 
 ::-webkit-scrollbar-thumb:hover {
   background: darken(#bb86fc, 10%);
+}
+
+// Global container class
+.container {
+  max-width: 1080px;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+main.container {
+  padding-top: 275px; // Adjust this value based on your header height
+  padding-bottom: 2rem;
 }

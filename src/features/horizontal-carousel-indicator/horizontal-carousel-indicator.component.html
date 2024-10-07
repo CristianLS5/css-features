@@ -1,0 +1,13 @@
+<app-feature-showcase [title]="title" [description]="description" [htmlCode]="htmlCode" [cssCode]="cssCode"
+    [jsCode]="jsCode">
+    <div example>
+        <div class="gallery">
+            <div class="gallery__progress"></div>
+            <div class="gallery__scrollcontainer">
+                <div class="gallery__entry" *ngFor="let image of images">
+                    <img [src]="image.src" [alt]="image.alt" draggable="false">
+                </div>
+            </div>
+        </div>
+    </div>
+</app-feature-showcase>
