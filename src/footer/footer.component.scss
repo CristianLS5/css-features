@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  height: 0;
+}
+
+footer {
+  background-color: var(--bg-secondary);
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  nav {
+    a {
+      margin-left: 1rem;
+      color: var(--text-secondary);
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
