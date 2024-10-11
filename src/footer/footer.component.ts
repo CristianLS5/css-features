@@ -1,15 +1,20 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements AfterViewInit, OnDestroy {
   private observer: IntersectionObserver | null = null;
+  currentYear: number = new Date().getFullYear();
+  faGithub = faGithub;
+  faLinkedin = faLinkedin;
 
   constructor(private el: ElementRef) {}
 
@@ -21,6 +26,10 @@ export class FooterComponent implements AfterViewInit, OnDestroy {
     if (this.observer) {
       this.observer.disconnect();
     }
+  }
+
+  getLinkedInUrl(): string {
+    return 'https://www.linkedin.com/in/cristian-l%C3%B3pez-sol%C3%A1-2b6493204/?locale=en_US';
   }
 
   private setupScrollAnimation() {

@@ -5,7 +5,7 @@
 
 footer {
   background-color: var(--bg-secondary);
-  padding: 1rem 0;
+  padding: 2rem 0;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -15,19 +15,55 @@ footer {
   transition: opacity 0.3s ease, transform 0.3s ease;
 
   .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  p {
-    margin: 0;
+  .footer-left {
+    flex: 1 1 25%;
+    display: none;
+
+    @media (min-width: 640px) {
+      display: block;
+    }
   }
 
-  nav {
-    a {
-      margin-left: 1rem;
+  .footer-center {
+    flex: 1 1 50%;
+    text-align: center;
+    margin-bottom: 1rem;
+
+    @media (min-width: 640px) {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0;
       color: var(--text-secondary);
+    }
+  }
+
+  .footer-right {
+    flex: 1 1 25%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: 640px) {
+      justify-content: flex-end;
+    }
+
+    a {
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
 
       &:hover {
         color: var(--accent-color);
