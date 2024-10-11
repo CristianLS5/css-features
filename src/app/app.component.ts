@@ -8,6 +8,7 @@ import { MarkerCarouselComponent } from '../features/marker-carousel/marker-caro
 import { ImageRevealComponent } from '../features/image-reveal/image-reveal.component';
 import { CoverFlowComponent } from '../features/cover-flow/cover-flow.component';
 import { WindowCarouselComponent } from '../features/window-carousel/window-carousel.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { WindowCarouselComponent } from '../features/window-carousel/window-caro
     ImageRevealComponent,
     CoverFlowComponent,
     WindowCarouselComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

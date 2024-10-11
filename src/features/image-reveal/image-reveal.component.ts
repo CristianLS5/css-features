@@ -12,7 +12,7 @@ import { FeatureShowcaseComponent } from '../../feature-showcase/feature-showcas
 export class ImageRevealComponent {
   title = 'Image Reveal Effect';
   description =
-    'Images that reveal themselves as they enter the scrollport, with static text content.';
+    'A scroll-driven animation effect where images reveal themselves as they enter the viewport.';
 
   images = [
     { src: 'assets/images/mouse.png', alt: 'Mouse image' },

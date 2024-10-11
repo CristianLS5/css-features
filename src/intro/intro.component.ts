@@ -12,11 +12,12 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 export class IntroComponent {
   features: string[] = [
     'Scroll-driven Animations',
-    'Container Queries',
-    'Subgrid',
-    'Custom Properties (CSS Variables)',
-    'Logical Properties',
-    'Aspect Ratio',
-    'Backdrop Filter',
+    'Parallax Effects',
+    'CSS Scroll Snap',
+    'Image Reveal Effects',
+    'Custom Scrollbar Styling',
+    'Responsive Design using Flexbox and CSS Grid',
+    'CSS Custom Properties for Dynamic Styling',
+    'Intersection Observer API for Scroll-based Animations',
   ];
 }
