@@ -7,8 +7,14 @@
                 <h2>{{ title }}</h2>
                 <ul class="meta">
                     <li>{{ role }}</li>
-                    <li>{{ username }}</li>
-                    <li>{{ pronouns }}</li>
+                    <li class="social-links">
+                        <a [href]="getGitHubUrl()" target="_blank" rel="noopener noreferrer" title="GitHub">
+                            <fa-icon [icon]="faGithub" size="lg"></fa-icon>
+                        </a>
+                        <a [href]="getLinkedInUrl()" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                            <fa-icon [icon]="faLinkedin" size="lg"></fa-icon>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
