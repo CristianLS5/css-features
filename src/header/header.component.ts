@@ -17,7 +17,7 @@ export class HeaderComponent {
 
   title = 'Cristian López Solá';
   role = 'Angular Developer';
-  avatarUrl = 'https://brm.us/avatar';
+  avatarUrl = 'assets/images/avatar.jpg';
 
   getLinkedInUrl(): string {
     return 'https://www.linkedin.com/in/cristian-l%C3%B3pez-sol%C3%A1-2b6493204/?locale=en_US';
