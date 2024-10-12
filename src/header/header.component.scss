@@ -1,5 +1,3 @@
-
-
 @supports (animation-timeline: scroll()) {
   .info {
     animation: adjust-info linear both;
@@ -30,7 +28,7 @@
   #button-edit,
   .bg {
     animation-timeline: scroll();
-    animation-range: 0 150px;
+    animation-range: 0 100px;
   }
 
   header {

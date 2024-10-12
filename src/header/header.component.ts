@@ -54,12 +54,14 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     const meta = this.el.nativeElement.querySelector('.meta');
     const bg = this.el.nativeElement.querySelector('.bg');
 
+    // Reduce the scroll range to make the animation complete faster
+    const scrollRange = 100; // Adjust this value as needed
+
     if ('animate' in Element.prototype && 'ScrollTimeline' in window) {
-      // Use ScrollTimeline if supported
       const scrollTimeline = new ScrollTimeline({
         source: document.scrollingElement,
         orientation: 'block',
-        scrollOffsets: [CSS.px(0), CSS.px(150)],
+        scrollOffsets: [CSS.px(0), CSS.px(scrollRange)],
       });
 
       header.animate(
@@ -103,7 +105,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     } else {
       // Fallback to scroll event listener
       this.scrollListener = () => {
-        const scrollPercentage = Math.min(window.scrollY / 150, 1);
+        const scrollPercentage = Math.min(window.scrollY / scrollRange, 1);
 
         header.style.boxShadow = `0 ${5 * scrollPercentage}px ${
           5 * scrollPercentage
